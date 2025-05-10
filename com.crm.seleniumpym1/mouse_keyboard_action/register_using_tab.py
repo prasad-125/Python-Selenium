@@ -1,0 +1,32 @@
+from selenium import webdriver
+from selenium.webdriver import ActionChains, Keys
+from selenium.webdriver.common.by import By
+from time import sleep
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option("detach", True)
+driver = webdriver.Chrome(options=options)
+driver.maximize_window()
+driver.get("https://demowebshop.tricentis.com/")
+sleep(2)
+action=ActionChains(driver)
+action.key_down(Keys.TAB).perform()
+action.key_down(Keys.TAB).perform()
+action.key_down(Keys.ENTER).perform()
+driver.find_element(By.XPATH,"//div[@class='gender']/input").click()
+action.key_down(Keys.TAB).perform()
+action.send_keys("prasad").perform()
+action.key_down(Keys.ENTER).perform()
+sleep(1)
+action.send_keys("HIREY").perform()
+action.key_down(Keys.ENTER).perform()
+sleep(1)
+action.send_keys("prasad@123.com").perform()
+action.key_down(Keys.ENTER).perform()
+sleep(1)
+action.send_keys("prasad123").perform()
+action.key_down(Keys.ENTER).perform()
+sleep(1)
+action.send_keys("prasad123").perform()
+action.key_down(Keys.ENTER)
+action.key_down(Keys.TAB).perform()
